@@ -1,0 +1,15 @@
+Options -Indexes
+RewriteEngine On
+RewriteBase /
+
+# 1. Do not rewrite direct requests to the PHP API or uploaded files
+RewriteRule ^api/ - [L]
+
+# 2. Serve actual existing files and directories directly (e.g. css, js, images)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# 3. Single Page Application (SPA) fallback:
+# Direct all other routes (like /admin, /admin/login, /politics, /cinema) to index.html
+RewriteRule ^ index.html [L]

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 140" width="540" height="140">
+  <defs>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef1616"/>
+      <stop offset="100%" stop-color="#b80c0c"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Left Badge Globe / Mic Icon Box -->
+  <rect x="10" y="15" width="110" height="110" rx="18" fill="url(#redGrad)"/>
+  
+  <!-- Globe / Broadcast Rings in Badge -->
+  <circle cx="65" cy="70" r="34" fill="none" stroke="#ffffff" stroke-width="4.5"/>
+  <ellipse cx="65" cy="70" rx="16" ry="34" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <line x1="31" y1="70" x2="99" y2="70" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="65" cy="70" r="7" fill="#ffffff"/>
+  <!-- Broadcast waves -->
+  <path d="M 85 45 A 28 28 0 0 1 85 95" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 95 35 A 42 42 0 0 1 95 105" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- English Title "REPORTER" -->
+  <text x="140" y="65" fill="#111827" font-family="'Montserrat', 'Arial Black', sans-serif" font-size="44" font-weight="900" letter-spacing="1.5">REPORTER</text>
+  
+  <!-- English Title "WORLD" in Red -->
+  <text x="390" y="65" fill="#e50914" font-family="'Montserrat', 'Arial Black', sans-serif" font-size="44" font-weight="900" letter-spacing="1.5">WORLD</text>
+
+  <!-- Tagline Banner in English -->
+  <rect x="140" y="80" width="375" height="34" rx="6" fill="#111827"/>
+  <text x="327" y="103" fill="#ffffff" font-family="'Montserrat', 'Inter', sans-serif" font-size="16" font-weight="700" letter-spacing="2" text-anchor="middle">VOICE OF THE WORLD</text>
+</svg>

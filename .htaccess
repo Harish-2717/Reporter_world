@@ -1,0 +1,29 @@
+Options -Indexes
+RewriteEngine On
+RewriteBase /
+
+# 1. Allow direct access to PHP API & Uploads
+RewriteRule ^api/ - [L]
+
+# 2. Serve actual existing files and directories directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# 3. Handle assets mapping if dist folder is used (local dev)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)/?assets/(.*)$ dist/assets/$2 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)/?(favicon\.svg|icons\.svg|placeholder-news\.svg)$ dist/$2 [L]
+
+# 4. SPA Fallback:
+# If dist/index.html exists (e.g. local XAMPP environment)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond dist/index.html -f
+RewriteRule ^ dist/index.html [L]
+
+# 5. SPA Fallback for Hostinger Live Server (index.html in public_html root)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
